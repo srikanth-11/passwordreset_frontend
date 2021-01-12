@@ -5,31 +5,7 @@ let password = document.getElementById("password");
 
 let registerButton = document.querySelector(".registerButton");
 
-let displayMsgModal = (msg) => {
- let msgModalContainer = document.createElement("div");
- msgModalContainer.classList.add("msg-modal-container");
- msgModalContainer.id = "msg-modal-container";
 
- let msgModalContent = document.createElement("div");
- msgModalContent.classList.add("msg-modal-content");
- msgModalContent.innerHTML = msg;
-
- let modalCloseBtn = document.createElement("div");
- modalCloseBtn.classList.add("modal-close-btn");
- modalCloseBtn.innerHTML = "close";
-
- msgModalContent.append(modalCloseBtn);
-
- msgModalContainer.append(msgModalContent);
- document.body.append(msgModalContainer);
-
- modalCloseBtn.onclick = () => {
-   msgModalContainer.style.display = "none";
- };
- setTimeout(() => {
-   msgModalContainer.remove();
- }, 4000);
-};
 
 
 let checkOnSubmit = async (e) => {
@@ -39,7 +15,7 @@ let checkOnSubmit = async (e) => {
    
 
 
-         let user = await fetch("http://localhost:3000/sign_up", {
+         let user = await fetch("https://passwordreset-12.herokuapp.com/sign_up", {
 
              // Adding method type 
              method: "POST",

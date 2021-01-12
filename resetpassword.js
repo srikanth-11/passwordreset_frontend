@@ -1,5 +1,5 @@
 
-
+const myurl = "https://passwordreset-12.herokuapp.com"
 
 let password = document.getElementById("password");
 
@@ -12,7 +12,7 @@ let checkOnSubmit = async () => {
     console.log(token);
     try {
       console.log(token)
-            let data = await fetch("http://localhost:3000/reset", {
+            let data = await fetch(`${myurl}/reset`, {
                 // Adding method type
                 method: "PUT",
 
